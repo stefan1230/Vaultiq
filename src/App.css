@@ -1,0 +1,20 @@
+/* Responsive layout enhancements */
+@media (min-width: 640px) {
+  .stats-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-row {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-grid-cols {
+    grid-template-columns: 2fr 1fr !important;
+  }
+}
