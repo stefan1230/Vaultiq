@@ -7,13 +7,13 @@ function DebtGroup({ title, icon, dotColor, accounts, statements, onCommit, onDe
   if (accounts.length === 0) return null;
 
   return (
-    <div style={styles.group}>
+    <div className="debt-group" style={styles.group}>
       <h3 style={styles.groupTitle}>
         <span style={{ ...styles.groupDot, background: dotColor }} />
         {icon} {title}
         <span style={styles.count}>{accounts.length}</span>
       </h3>
-      <div style={styles.list}>
+      <div className="debt-group__list" style={styles.list}>
         {accounts.map(acc => (
           <AccountCard
             key={acc.id}
@@ -34,7 +34,7 @@ export default function LiabilitiesPanel({ accounts, statements, onCreate, onCom
   const loans = normalized.filter(a => a.type === 'loan');
 
   return (
-    <div style={styles.wrap}>
+    <div className="liabilities-panel" style={styles.wrap}>
       <AddDebtForm onCreate={onCreate} />
 
       {normalized.length === 0 && (

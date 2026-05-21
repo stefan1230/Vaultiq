@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.48e6b552.css",
-    "main.js": "/static/js/main.c4dfc3cc.js",
-    "index.html": "/index.html",
-    "main.48e6b552.css.map": "/static/css/main.48e6b552.css.map",
-    "main.c4dfc3cc.js.map": "/static/js/main.c4dfc3cc.js.map"
+    "main.css": "/Vaultiq/static/css/main.eae1d321.css",
+    "main.js": "/Vaultiq/static/js/main.28deffac.js",
+    "index.html": "/Vaultiq/index.html",
+    "main.eae1d321.css.map": "/Vaultiq/static/css/main.eae1d321.css.map",
+    "main.28deffac.js.map": "/Vaultiq/static/js/main.28deffac.js.map"
   },
   "entrypoints": [
-    "static/css/main.48e6b552.css",
-    "static/js/main.c4dfc3cc.js"
+    "static/css/main.eae1d321.css",
+    "static/js/main.28deffac.js"
   ]
 }

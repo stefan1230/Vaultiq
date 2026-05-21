@@ -1,67 +1,42 @@
-# Debt Tracker — React App
+# Vaultiq
 
-A cloud-connected personal financial ledger for tracking credit card debt and savings goals.
+Personal finance workspace — track credit cards, loans, savings goals, and insights.
 
-## Features
-- 🔐 Supabase authentication & cloud sync
-- 💳 Track multiple credit card balances with monthly statements
-- 📊 Automatic interest calculation
-- 💰 Savings goals with deposit/withdrawal tracking
-- 📦 JSON backup & restore
-- 📱 Mobile-first responsive design
+**Live site:** [https://stefan1230.github.io/Vaultiq/](https://stefan1230.github.io/Vaultiq/)
 
-## Getting Started
-
-### Prerequisites
-- Node.js 16+
-- npm or yarn
-
-### Install & Run
+## Local development
 
 ```bash
 npm install
 npm start
 ```
 
-The app runs at `http://localhost:3000`.
+## Deploy to GitHub Pages
 
-### Build for Production
+### Option A — Automatic (recommended)
+
+1. Push this repo to `https://github.com/stefan1230/Vaultiq`
+2. On GitHub: **Settings → Pages → Build and deployment → Source:** choose **GitHub Actions**
+3. Push to `master` (or `main`) — the workflow in `.github/workflows/deploy.yml` builds and deploys automatically
+
+### Option B — Manual deploy
 
 ```bash
-npm run build
+npm run deploy
 ```
 
-## Configuration
+This runs `npm run build` and publishes the `build` folder to the `gh-pages` branch.
 
-Supabase credentials are pre-configured in `src/utils/supabase.js`. To use your own instance:
+## Supabase (cloud sync)
 
-1. Create a project at [supabase.com](https://supabase.com)
-2. Create a `user_financial_states` table with columns:
-   - `user_id` (text, primary key)
-   - `payload` (jsonb)
-   - `updated_at` (timestamptz)
-3. Update `SUPABASE_URL` and `SUPABASE_KEY` in `src/utils/supabase.js`
+If login fails on the live site, add this URL in the Supabase dashboard:
 
-## Project Structure
+**Authentication → URL configuration → Redirect URLs:**
 
 ```
-src/
-├── components/
-│   ├── AuthScreen.jsx     # Login screen
-│   ├── AccountCard.jsx    # Credit card liability card
-│   ├── SavingsPanel.jsx   # Savings goals panel
-│   └── StatCard.jsx       # Summary stat card
-├── hooks/
-│   └── useDB.js           # IndexedDB state hook
-├── utils/
-│   ├── db.js              # IndexedDB helpers
-│   ├── supabase.js        # Supabase client & sync
-│   └── format.js          # Number/date formatters
-├── App.jsx                # Main app component
-└── index.js               # Entry point
+https://stefan1230.github.io/Vaultiq/**
 ```
 
-## Data Storage
+## Changing the GitHub Pages URL
 
-- **Local**: IndexedDB (works offline)
-- **Cloud**: Supabase (synced on every change when authenticated)
+If the repo name changes, update `homepage` in `package.json` and `PUBLIC_URL` in `.github/workflows/deploy.yml` to match `/YourRepoName`.
